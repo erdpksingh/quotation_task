@@ -39,7 +39,7 @@
       <label for="date">Start Date:</label>
       <input type="date" class="form-control" id="start_date" placeholder="Enter Start Date" name="pwd">
       <div id="start_date_error" class="text-danger mt-2" style="display: none;">
-                    Please select currency.
+                    Please select start_dat.
         </div>
     </div>
 
@@ -47,7 +47,7 @@
       <label for="pwd">End Date:</label>
       <input type="date" class="form-control" id="end_date" placeholder="Enter End Date" name="pwd">
       <div id="end_date_error" class="text-danger mt-2" style="display: none;">
-                    Please select currency.
+                    Please select end_date.
         </div>
     </div>
 
