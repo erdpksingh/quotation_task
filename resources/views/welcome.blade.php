@@ -64,7 +64,6 @@
             const currency_id = document.getElementById('currency_id').value;
             const start_date = document.getElementById('start_date').value;
             const end_date = document.getElementById('end_date').value;
-            const token = 'cIYbPfEaGKkcTDPptCe2xrNOjt2rNTYG92bZhIKJpgUrWlqJPd12x0fIggwdysSP';
             
             try {
 
@@ -101,6 +100,45 @@
                   end_date_error.style.display = 'none';
                 }
              
+
+                const response = await fetch('/api//quotation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                    },
+                    body: JSON.stringify({ age, currency_id, start_date, end_date})
+                });
+
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+
+                    document.getElementById('result').innerHTML = `
+                        <table class="table table-bordered">
+                        <tr>
+                        <th>Total</th>
+                        <th>Currency</th>
+                        <th>Quotation Id</th>
+                        </tr>
+                    <tr>
+                        <td>${result.total}</td>
+                        <td>${result.currency_id}</td>
+                        <td>QTNo.${result.quotation_id}</td>
+                    </tr>
+                        </table>    
+                    `;                  
+                } else {
+
+
+                   console.log('Error');
+
+                }
+            } catch (error) {
+               const errorMessage = error.message;
+               console.log(errorMessage);
+            }
         });
     </script>
 </html>
