@@ -2,12 +2,25 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Facades\JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 
 class quotationController extends Controller
 {
 
 public function index(request $request){
+
+
+
+    // try {
+    //     $token = $request->bearerToken();
+    //     $user = JWTAuth::parseToken()->authenticate();
+    // } catch (JWTException $e) {
+    //     return response()->json(['error' => 'Invalid or missing token'], 401);
+    // }
+
+
 
     $request->validate([
         "age" => "required",
