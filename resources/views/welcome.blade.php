@@ -101,12 +101,12 @@
                 }
              
 
-                const response = await fetch('/api//quotation', {
+                const response = await fetch('/api/quotation', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
-                        'Authorization': `Bearer ${token}`,
+                      //  'Authorization': `Bearer ${token}`,
                     },
                     body: JSON.stringify({ age, currency_id, start_date, end_date})
                 });
